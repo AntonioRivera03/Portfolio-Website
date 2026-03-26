@@ -1,65 +1,51 @@
-import Image from "next/image";
+import Link from "next/link";
+
+import { buttonVariants } from "@/components/ui/button-variants";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="flex flex-1 flex-col">
+      <section className="relative flex min-h-screen items-center justify-center px-6 py-24">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(rgb(255_255_255/0.08)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.08)_1px,transparent_1px)] [background-size:42px_42px]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent via-background/80 to-background" />
+        <div className="relative mx-auto flex w-full max-w-5xl flex-col items-start gap-5 rounded-2xl border border-white/15 bg-black/30 p-8 backdrop-blur-md sm:p-12">
+          <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">
+            Antonio Rivera
+          </p>
+          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-foreground sm:text-6xl">
+            Building focused products with clean engineering.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Explore my experience and jump into the projects hub.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      <section className="relative flex items-center justify-center px-6 py-8 sm:py-10">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background to-transparent" />
+        <div className="relative grid w-full max-w-2xl grid-cols-1 place-items-center gap-8 sm:grid-cols-2 sm:gap-24">
+          <Link
+            href="/experience"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-12 w-52 border-white/30 bg-white/5 text-foreground hover:bg-white/10",
+            )}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Experience
+          </Link>
+          <Link
+            href="/projects"
+            className={cn(
+              buttonVariants({ variant: "default", size: "lg" }),
+              "h-12 w-52",
+            )}
           >
-            Documentation
-          </a>
+            Projects
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
