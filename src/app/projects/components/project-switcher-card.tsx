@@ -19,10 +19,10 @@ export function ProjectSwitcherCard({
       type="button"
       onClick={() => onSelect(project.id)}
       className={cn(
-        "w-full rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 text-left transition-all duration-200",
-        "hover:border-white/30 hover:bg-zinc-800 hover:translate-x-2",
+        "w-full rounded-xl border border-border bg-card/75 px-4 py-3 text-left transition-all duration-200",
+        "hover:translate-x-2 hover:border-[var(--chart-2)]/55 hover:bg-card",
         isSelected &&
-          "border-white/35 bg-zinc-800 shadow-[0_0_0_1px_rgb(255_255_255/0.16)]",
+          "border-[var(--chart-2)]/55 bg-card shadow-[0_0_0_1px_rgb(0_0_0_/_0.04)] dark:shadow-[0_0_0_1px_rgb(255_255_255_/_0.14)]",
       )}
       aria-pressed={isSelected}
     >
